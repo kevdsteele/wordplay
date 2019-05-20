@@ -56,13 +56,14 @@ document.onkeyup = function(event) {
     
     if (correctGuess) {
         console.log("You found a letter");
-    
+        console.log(userSolution);
         if (!unsolved) {
             console.log("You win");
         }
     } 
     else {
         console.log("Incorrect guess");
+        console.log(userSolution);
     }
     
     
