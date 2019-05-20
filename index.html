@@ -21,7 +21,7 @@ var wordLetters = [];
 var userGuesses = [];
 var userSolution = [];
 var guessCount = 0;
-var userWord = "";
+var userWord = 0;
 
 /*Function to insert into array at specific index */
  userSolution.insert = function (index, item) {
@@ -42,7 +42,7 @@ document.onkeyup = function(event) {
     
     console.log("This was the user guess " + userGuess);
     
-   if (userSolution === wordLetters) {
+   if (userWords === wordLetters.length) {
        console.log("You win");
    
    } 
@@ -66,16 +66,15 @@ document.onkeyup = function(event) {
         for (j = 0; j < word.length; j ++) {
             if (wordLetters[j] === userGuess) {
             userSolution.insert(j, userGuess);
+                
             }    
         } 
     
     }
     
     for ( k =0; k < word.length; k++) {
-        userWord = userWord + userSolution[k];
-        
-        if (word === userWord) {
-            console.log("You win");
+         if (wordLetters[k] === userSolution[k]) {
+             userWord++
          }
     }   
         
