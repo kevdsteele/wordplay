@@ -41,7 +41,11 @@ document.onkeyup = function(event) {
     
     console.log("This was the user guess " + userGuess);
     
-    if (userGuesses.indexOf(userGuess) > -1) {
+   if (userSolution === wordLetters) {
+       console.log("You win");
+   
+   } 
+    else if (userGuesses.indexOf(userGuess) > -1) {
         console.log("Already guessed that letter");
     }  
     
@@ -66,9 +70,7 @@ document.onkeyup = function(event) {
     
     }
     
-   if (userSolution === wordLetters) {
-       console.log("You win");
-   }
+ 
    console.log("These are the letters in the word " + wordLetters);
    console.log("These are the correct letters so far " + userSolution);
    console.log("These are the gueses so far " + userGuesses);
