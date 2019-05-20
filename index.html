@@ -51,9 +51,14 @@ document.onkeyup = function(event) {
     
     else {  
         console.log("You guessed a letter");
-        userSolution.push(userGuess);
         userGuesses.push(userGuess);
-         guessCount++;
+        guessCount++;
+        
+        for (j = 0; j < word.length; j ++) {
+            if (word[j] === userGuess {
+            userSolution.push[j](userGuess);   
+            }    
+        } 
     
     }
    console.log("These are the correct letters so far " + userSolution);
