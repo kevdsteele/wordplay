@@ -18,18 +18,14 @@
 /*Declare variables*/
 var word = "apple";
 var wordLetters = [];
-var userGuesses = [];
 var userSolution = [];
-var guessCount = 0;
-var userWords = 0;
+var unsolved = false;
+var correctGuess = false;
 
-/*Function to insert into array at specific index */
- userSolution.insert = function (index, item) {
- this.splice( index, 0, item );
- }
-    
+   
 for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
+UserSolution.push("_");
    
 }
 
@@ -43,28 +39,30 @@ document.onkeyup = function(event) {
     console.log("This was the user guess " + userGuess);
     
   for (j=0; j < word.length; j++) {
-      
-    if (userGuesses.indexOf(userGuess) !== -1) {
-        console.log("Already guessed that letter");
-    }  
-    
-    else if (wordLetters.indexOf(userGuess) === -1){
-               
-           userGuesses.push(userGuess);
-           console.log("Not in word");
-           
-    
-    }
-    
-    else if (wordLetters[j] === userGuess) {  
-        console.log("You guessed a letter");
+         
+    if (wordLetters[j] === userGuess) {  
+        correctGuess= true;
         userSolution[j] = userGuess;
-        
-        
+        }
+     if (userSolution[j] === "_") {
+         unsolved=true;
+       }
+  }
+    
+    if (correctGuess) {
+        console.log("You found a letter");
+    
+        if (!unsolved) {
+            console.log("You win");
+        }
     }
-   
       
-  }      
+        
+        
+      
+        
+        
+       
     
  
    console.log("These are the letters in the word " + wordLetters);
