@@ -63,7 +63,7 @@ document.onkeyup = function(event) {
         guessCount++;
         
         for (j = 0; j < word.length; j ++) {
-            if (word[j] === userGuess) {
+            if (wordLetters[j] === userGuess) {
             userSolution.insert(j, userGuess);
             }    
         } 
