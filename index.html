@@ -52,14 +52,14 @@ document.onkeyup = function(event) {
                
            userGuesses.push(userGuess);
            console.log("Not in word");
-           guessCount++;
+           
     
     }
     
-    else {  
+    else if (wordLetters[j] === userGuess) {  
         console.log("You guessed a letter");
         userSolution[j] = userGuess;
-        guessCount++;
+        
         
     }
    
