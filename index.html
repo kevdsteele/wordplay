@@ -35,27 +35,24 @@ document.onkeyup = function(event) {
     
     console.log("This was the user guess " + userGuess);
     
-    if (wordLetters.indexOf(userGuess) === -1){
-        
-       if (userGuesses.indexOf(userGuess) === -1) {
+    if (userGuesses.indexof(userGuess) > -1) {
+        console.log("Already guessed that letter");
+    }  
+    
+    else if (wordLetters.indexOf(userGuess) === -1){
+               
            userGuesses.push(userGuess);
            console.log("Not in word");       
-       }
-       else {
-        console.log("Already guessed that letter");
-       }
+    
     }
     
-    if (wordLetters.indexOf(userGuess !== -1){
-        if (userGuesses.indexOf(userGuess) !== -1) {
-        console.log("Already guessed correct letter");
-    }
+    else {  
         console.log("You guessed a letter");
         userSolution.push(userGuess);
         userGuesses.push(userGuess);
     }
    console.log("These are the correct letters so far" + userSolution);
-    console.log("These are the gueses so far" + userGuesses);
+   console.log("These are the gueses so far" + userGuesses);
 }
 
  </script>
