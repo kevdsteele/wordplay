@@ -34,9 +34,6 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
     
     console.log("This was the user guess " + userGuess);
-    userGuesses.push(userGuess);
-    
-    console.log("This is what the user has guessed " + userGuesses);
     
     if (wordLetters.indexOf(userGuess) === -1){
         
