@@ -32,19 +32,21 @@ console.log(wordLetters);
 /*Function to capture user key presses */         
 document.onkeyup = function(event) {
     var userGuess = event.key;
+    
     console.log("This was the user guess " + userGuess);
     userGuesses.push(userGuess);
+    
     console.log("This is what the user has guessed " + userGuesses);
     
     if (wordLetters.indexOf(userGuess) === -1){
+        
        if (userGuesses.indexOf(userGuess) === -1) {
            console.log("Not in word");
            userGuesses.push(userGuess);   
        }
-    else {
+       else {
         console.log("Already guessed that letter");
-        
-    }
+       }
     }
     
     else {
