@@ -19,8 +19,7 @@
 var word = "apple";
 var wordLetters = [];
 var userSolution = [];
-var unsolved = false;
-var correctGuess = false;
+
 
    
 for (i = 0; i < word.length; i++) {
@@ -35,6 +34,8 @@ console.log(wordLetters);
 /*Function to capture user key presses */         
 document.onkeyup = function(event) {
     var userGuess = event.key;
+    var unsolved = false;
+    var correctGuess = false;
     
     console.log("This was the user guess " + userGuess);
     
