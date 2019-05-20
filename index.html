@@ -10,7 +10,7 @@
 
 <!--Boostrap grid-->
         <div class="container">
-
+            <h2> hello world </h2>
         </div>        
 
 
@@ -20,7 +20,7 @@ var word = "apple";
 var wordLetters = [];
 var userGuesses = [];
 
-while (i = 0; i < word.length; i++) {
+for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
 }
 
@@ -29,10 +29,10 @@ console.log(wordLetters);
                    
 /*Function to capture user key presses */         
 document.onkeyup = function(event) {
-var userGuess = event.key;
-console.log(userGuess);
-userGuesses.push(userGuess);
-console.log(userGuesses);
+    var userGuess = event.key;
+    console.log(userGuess);
+    userGuesses.push(userGuess);
+    console.log(userGuesses);
 }
 
  </script>
