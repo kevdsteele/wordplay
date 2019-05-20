@@ -22,6 +22,7 @@ var userGuesses = [];
 
 for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
+   
 }
 
 console.log(wordLetters);
@@ -33,6 +34,15 @@ document.onkeyup = function(event) {
     console.log(userGuess);
     userGuesses.push(userGuess);
     console.log(userGuesses);
+    
+    if (wordLetters.indexof(userGuess) === -1){
+        console.log("Not in word");
+    }
+    
+    else {
+        console.log("You guessed a letter");
+    }
+        
 }
 
  </script>
