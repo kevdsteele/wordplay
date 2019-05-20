@@ -37,7 +37,7 @@ document.onkeyup = function(event) {
     console.log(userGuesses);
     
     if (wordLetters.indexOf(userGuess) === -1){
-       if (UserGuesses.indexOf(userGuess) === -1) {
+       if (userGuesses.indexOf(userGuess) === -1) {
            console.log("Not in word");
            userGuesses.push(userGuess);
            
