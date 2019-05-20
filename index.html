@@ -19,6 +19,7 @@
 var word = "apple";
 var wordLetters = [];
 var userGuesses = [];
+var userSolution = [];
 
 for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
@@ -36,13 +37,20 @@ document.onkeyup = function(event) {
     console.log(userGuesses);
     
     if (wordLetters.indexOf(userGuess) === -1){
-        console.log("Not in word");
+       if (UserGuesses.indexOf(userGuess) === -1) {
+           console.log("Not in word");
+           userGuesses.push(userGuess);
+           
+       }
     }
     
     else {
         console.log("You guessed a letter");
+        userSolution.push(userGuess);
+        userGuesses.push(userGuess);
     }
-        
+   console.log(userSolution);
+    console.log(userGuesses);
 }
 
  </script>
