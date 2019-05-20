@@ -63,8 +63,8 @@ document.onkeyup = function(event) {
         for (j = 0; j < word.length; j ++) {
             
             if (wordLetters[j] === userGuess) {
-            console.log("Letter at word index of " j + "is " wordLetters[j]);
-            console.log("Letter at user solution index of "  j + "is " userSolution[j]);
+            console.log("Letter at word index of " + j + "is " + wordLetters[j]);
+            console.log("Letter at user solution index of " + j + "is " + userSolution[j]);
             userSolution.insert(j, userGuess);    
             }    
         } 
