@@ -47,6 +47,9 @@ document.onkeyup = function(event) {
     }
     
     if (wordLetters.indexOf(userGuess !== -1){
+        if (userGuesses.indexOf(userGuess) !== -1) {
+        console.log("Already guessed correct letter");
+    }
         console.log("You guessed a letter");
         userSolution.push(userGuess);
         userGuesses.push(userGuess);
