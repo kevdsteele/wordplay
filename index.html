@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Word Play</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!--Boostrap grid-->
+        <div class="container">
+
+        </div>        
+
+
+<script type="text/javascript">
+/*Declare variables*/
+var word = "apple";
+var wordLetters = [];
+var userGuesses = [];
+
+while (i = 0; i < word.length; i++) {
+wordLetters.push(word[i]);
+}
+
+console.log(wordLetters);
+
+                   
+/*Function to capture user key presses */         
+document.onkeyup = function(event) {
+var userGuess = event.key;
+console.log(userGuess);
+userGuesses.push(userGuess);
+console.log(userGuesses);
+}
+
+ </script>
+
+ </body>
+ </html>   
