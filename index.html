@@ -48,7 +48,10 @@ document.onkeyup = function(event) {
      if (userSolution[j] === "_") {
          unsolved=true;
        }
-  }
+  
+     }
+    
+    /* end loop */
     
     if (correctGuess) {
         console.log("You found a letter");
@@ -56,10 +59,12 @@ document.onkeyup = function(event) {
         if (!unsolved) {
             console.log("You win");
         }
+    } 
     else {
+        console.log("Incorrect guess";);
     }
     
-    }
+    
       
         
         
