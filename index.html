@@ -26,7 +26,7 @@
 
 <script type="text/javascript">
 /*Declare variables*/
-var word = "bananna pie";
+var wordList= ["sheldon", "leonard", "howard", "raj", "penny", "amy", "bernadette"];
 var wordLetters = [];
 var userSolution = [];
 var guessCount = 10;
@@ -34,7 +34,7 @@ var wins = 0;
 var guessedLetters = [];
 var leftToGuess=0;
 
-
+var word = wordList[Math.floor(Math.random() * wordList.length)];
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
 
 
@@ -96,7 +96,8 @@ if (guessedLetters.indexOf(userGuess) === -1){
         console.log("You found a letter");
         console.log(userSolution);
         } else {
-            document.getElementById("guessAlert").innerHTML="You won!";
+            document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
+            setTimeout("location.href = 'index.html'", 3000);
             console.log("You win");
         }
     } 
@@ -106,6 +107,11 @@ if (guessedLetters.indexOf(userGuess) === -1){
         document.getElementById("guessAlert").innerHTML="Incorrect guess. Please try again!";
         console.log("Incorrect guess");
         console.log(userSolution);
+    }
+
+    if (guessCount === 0) {
+        document.getElementById("guessAlert").innerHTML="You lose!! Restarting game...";
+        setTimeout("location.href = 'index.html'", 3000);
     }
     
 } else {
