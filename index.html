@@ -21,12 +21,14 @@
             <div id="guessText"></div>
             <hr>
             <div id="guessesLeft"></div>
+            <hr>
+            <div id="winsText"></div>
         </div>        
 
 
 <script type="text/javascript">
 /*Declare variables*/
-var wordList= ["sheldon", "leonard", "howard", "raj", "penny", "amy", "bernadette"];
+var wordList= ["sheldon", "leonard", "howard", "raj", "penny", "amy", "bernadette", "stewart", "bazinga", "comic book", "science", "comic con"];
 var wordLetters = [];
 var userSolution = [];
 var guessCount = 10;
@@ -36,7 +38,7 @@ var leftToGuess=0;
 
 var word = wordList[Math.floor(Math.random() * wordList.length)];
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
-
+document.getElementById("winsText").innerHTML="You have won " + wins + " times";
 
 
    
@@ -97,7 +99,9 @@ if (guessedLetters.indexOf(userGuess) === -1){
         console.log(userSolution);
         } else {
             document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
-            setTimeout("location.href = 'index.html'", 3000);
+            wins++;
+            document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
+            location.reload(false);
             console.log("You win");
         }
     } 
