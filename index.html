@@ -10,7 +10,17 @@
 
 <!--Boostrap grid-->
         <div class="container">
-            <h2> hello world </h2>
+            <h2> Guess the Word</h2>
+            <hr>
+            <div id="wordText"></div>
+            <hr>
+            <div id="guessAlert">Press any key to start</div>
+            <hr>
+            <div>Guessed Letters</div>
+            <hr>
+            <div id="guessText"></div>
+            <hr>
+            <div id="guessesLeft"></div>
         </div>        
 
 
@@ -19,6 +29,14 @@
 var word = "bananna pie";
 var wordLetters = [];
 var userSolution = [];
+var guessCount = 10;
+var wins = 0;
+var guessedLetters = [];
+var leftToGuess=0;
+
+
+document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
+
 
 
    
@@ -26,8 +44,10 @@ for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
     if (word[i] === " ") {
         userSolution.push(" ");
+        document.getElementById("wordText").innerHTML=document.getElementById("wordText").innerHTML + "&nbsp";
         }  
     else {
+        document.getElementById("wordText").innerHTML=document.getElementById("wordText").innerHTML + "_ ";
     userSolution.push("_");
     }
 }
@@ -38,49 +58,74 @@ console.log(wordLetters);
 /*Function to capture user key presses */         
 document.onkeyup = function(event) {
     var userGuess = event.key;
-    var unsolved = false;
+    var solved = false;
     var correctGuess = false;
+   
     
     console.log("This was the user guess " + userGuess);
+
+   /* store user guess and determine if already guessed */
+
+if (guessedLetters.indexOf(userGuess) === -1){
     
   for (j=0; j < word.length; j++) {
-         
+   
+     /*check to see if letter matches */    
     if (wordLetters[j] === userGuess) {  
         correctGuess= true;
-        userSolution[j] = userGuess;
+        userSolution[j] = userGuess; 
+    }
+     
+    
+  }     
+
+        /* output array as string*/
+    var wordString = "";
+    for (k=0; k < userSolution.length; k++) {
+        wordString= wordString + (userSolution[k] + "&nbsp");
         }
-      
-     if (userSolution[j] === "_") {
-         unsolved=true;
-       }
-  
-     }
-    
-    /* end loop */
-    
+    document.getElementById("wordText").innerHTML=wordString;
+          
+
     if (correctGuess) {
+        document.getElementById("guessAlert").innerHTML="You guessed a letter!";
+        if (userSolution.indexOf("_") !== -1) {
+            document.getElementById("guessAlert").innerHTML+= "&nbsp" + "Guess Again";
+        
         console.log("You found a letter");
         console.log(userSolution);
-        if (!unsolved) {
+        } else {
+            document.getElementById("guessAlert").innerHTML="You won!";
             console.log("You win");
         }
     } 
     else {
+        guessCount--;
+        document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
+        document.getElementById("guessAlert").innerHTML="Incorrect guess. Please try again!";
         console.log("Incorrect guess");
         console.log(userSolution);
     }
     
-    
+} else {
+    document.getElementById("guessAlert").innerHTML="Letter already guessed. Please try again!";
+}
+
+
+   
+
+
+
       
         
         
       
-        
+}    
         
        
     
 
-}
+
 
  </script>
 
