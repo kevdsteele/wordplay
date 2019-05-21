@@ -67,7 +67,8 @@ document.onkeyup = function(event) {
    /* store user guess and determine if already guessed */
 
 if (guessedLetters.indexOf(userGuess) === -1){
-    
+    guessedLetters.push(userGuess);
+    document.getElementById("guessText").innerHTML+=userGuess + "&nbsp";
   for (j=0; j < word.length; j++) {
    
      /*check to see if letter matches */    
