@@ -29,7 +29,7 @@
 
 <script type="text/javascript">
 /*Declare variables*/
-var wins = 0;
+
 
     
 function playGame (wins) {
@@ -39,7 +39,7 @@ var userSolution = [];
 var guessCount = 10;
 var guessedLetters = [];
 var leftToGuess=0;    
-    
+var wins = 0;    
 
 /* Set/Reset game to begnnning */
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
@@ -126,7 +126,6 @@ if (guessedLetters.indexOf(userGuess) === -1){
             document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
             wins++;
             document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
-            location.reload(false);
             console.log("You win");
         }
     } 
@@ -140,7 +139,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
 
     if (guessCount === 0) {
         document.getElementById("guessAlert").innerHTML="You lose!! Restarting game...";
-        setTimeout("location.href = 'index.html'", 3000);
+        
     }
     
 } else {
