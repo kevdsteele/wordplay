@@ -38,6 +38,17 @@ function sleep(miliseconds) {
    }
 }
 
+function correctUpdate (userSolution) {
+    var wordString = "";
+    
+    for (k=0; k < userSolution.length; k++) {
+        wordString+= (userSolution[k] + "&nbsp");
+        }
+    document.getElementById("wordText").innerHTML=wordString;
+        correctGuess= true;
+  
+}    
+
     
 function playGame (wins) {
 
@@ -116,13 +127,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         userSolution[j] = userGuess;
         
         /*store the letter in an array with same index value*/
-            var wordString = "";
-    
-    for (k=0; k < userSolution.length; k++) {
-        wordString+= (userSolution[k] + "&nbsp");
-        }
-    document.getElementById("wordText").innerHTML=wordString;
-        correctGuess= true;
+            
     }
        
   }     
@@ -130,7 +135,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
     /* output array as string so we can caompare - outputting array includes commas which made it difficult to compare*/
     /*initialize the word each pass so it includes recent guesses*/
 
-    
+    correctUpdate (userSolution);
           
 
     if (correctGuess) {
