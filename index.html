@@ -28,14 +28,16 @@
 
 <script type="text/javascript">
 /*Declare variables*/
+var wins = 0;
+
+function playGame (wins) {
 var wordList= ["sheldon", "leonard", "howard", "raj", "penny", "amy", "bernadette", "stewart", "bazinga", "comic book", "science", "comic con"];
 var wordLetters = [];
 var userSolution = [];
 var guessCount = 10;
-var wins = 0;
 var guessedLetters = [];
-var leftToGuess=0;
-
+var leftToGuess=0;    
+    
 
 /* Set/Reset game to begnnning */
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
@@ -154,8 +156,8 @@ if (guessedLetters.indexOf(userGuess) === -1){
       
 }    
         
-       
-    
+return wins;       
+}    
 
 
 
