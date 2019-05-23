@@ -14,7 +14,7 @@
             <hr>
             <div id="wordText"></div>
             <hr>
-            <div id="guessAlert">Press any key to start</div>
+            <div id="guessAlert"></div>
             <hr>
             <div>Guessed Letters</div>
             <hr>
@@ -44,7 +44,13 @@ var leftToGuess=0;
 /* Set/Reset game to begnnning */
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
 document.getElementById("winsText").innerHTML="You have won " + wins + " times";
+document.getElementById("wordText").innerHTML=wordLetters;
+document.getElementById("guessAlertt").innerHTML="Press any key to start";
+document.getElementById("guessText").innerHTML=wordLetters;
 
+    
+    
+    
 /* var word = wordList[Math.floor(Math.random() * wordList.length)]; */
 
 var word =randWord();
