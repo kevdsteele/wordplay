@@ -30,7 +30,7 @@
 <script type="text/javascript">
 /*Declare variables*/
 var wins = 0; 
-var correctGuess = "";
+
     
 function sleep(miliseconds) {
    var currentTime = new Date().getTime();
@@ -130,14 +130,14 @@ if (guessedLetters.indexOf(userGuess) === -1){
         /*store the letter in an array with same index value*/
             
     }
-    correctUpdate (userSolution);   
+   
   }     
 
     /* output array as string so we can caompare - outputting array includes commas which made it difficult to compare*/
     /*initialize the word each pass so it includes recent guesses*/
 
     
-          
+    var correctGuess = correctUpdate (userSolution);         
 
     if (correctGuess) {
         document.getElementById("guessAlert").innerHTML="You guessed a letter!";
