@@ -128,7 +128,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         wordString+= (userSolution[k] + "&nbsp");
         }
     document.getElementById("wordText").innerHTML=wordString;
-    sleep(1000);
+    
           
 
     if (correctGuess) {
@@ -139,6 +139,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         console.log("You found a letter");
         console.log(userSolution);
         } else {
+            document.getElementById("wordText").innerHTML=wordString;
             document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
             wins++;
             document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
