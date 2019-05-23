@@ -36,11 +36,24 @@ var wins = 0;
 var guessedLetters = [];
 var leftToGuess=0;
 
-var word = wordList[Math.floor(Math.random() * wordList.length)];
+
+/* Set/Reset game to begnnning */
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
 document.getElementById("winsText").innerHTML="You have won " + wins + " times";
 
+/* var word = wordList[Math.floor(Math.random() * wordList.length)]; */
 
+var word =randWord();
+
+
+/* Function to pick random word from array */
+function randWord () {
+
+   return  wordList[Math.floor(Math.random() * wordList.length)];    
+}
+
+
+/*Output underscores and spaces in word */
    
 for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
@@ -68,24 +81,32 @@ document.onkeyup = function(event) {
 
    /* store user guess and determine if already guessed */
 
+/* if indexOf is -1 the word is not in the guessed letters array*/
+
 if (guessedLetters.indexOf(userGuess) === -1){
+    /*push letter into array*/
     guessedLetters.push(userGuess);
+    /* add letter guessed letters */
     document.getElementById("guessText").innerHTML+=userGuess + "&nbsp";
+
+  /*loop through the word and check for mataches*/  
   for (j=0; j < word.length; j++) {
    
      /*check to see if letter matches */    
     if (wordLetters[j] === userGuess) {  
         correctGuess= true;
+        /*store the letter in an array with same index value*/
         userSolution[j] = userGuess; 
     }
-     
-    
+       
   }     
 
-        /* output array as string*/
+    /* output array as string so we can caompare - outputting array includes commas which made it difficult to compare*/
+    /*initialize the word each pass so it includes recent guesses*/
     var wordString = "";
+    
     for (k=0; k < userSolution.length; k++) {
-        wordString= wordString + (userSolution[k] + "&nbsp");
+        wordString+= (userSolution[k] + "&nbsp");
         }
     document.getElementById("wordText").innerHTML=wordString;
           
