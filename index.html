@@ -42,7 +42,7 @@ function sleep(miliseconds) {
 function correctUpdate (userSolution) {
     var wordString = "";
     
-    for (k=0; k < (userSolution.length +1); k++) {
+    for (k=0; k < userSolution.length; k++) {
         wordString+= (userSolution[k] + "&nbsp");
         }
     document.getElementById("wordText").innerHTML=wordString;
