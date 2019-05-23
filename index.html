@@ -30,7 +30,13 @@
 <script type="text/javascript">
 /*Declare variables*/
 var wins = 0; 
-   
+
+function sleep(miliseconds) {
+   var currentTime = new Date().getTime();
+
+   while (currentTime + miliseconds >= new Date().getTime()) {
+   }
+}
 
     
 function playGame (wins) {
@@ -134,6 +140,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
             wins++;
             document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
             console.log("You win");
+            sleep (3000);
             playGame(wins);
         }
     } 
@@ -147,6 +154,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
 
     if (guessCount === 0) {
         document.getElementById("guessAlert").innerHTML="You lose!! Restarting game...";
+        sleep (3000);
         playGame(wins);
         
     }
