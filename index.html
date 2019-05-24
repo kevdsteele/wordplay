@@ -165,7 +165,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
             updateWord(userSolution);
             
                 
-            setTimeout(playAgain, 3000, wins);
+            setTimeout(playAgain, 1000, wins);
         }
     } 
     else {
@@ -180,7 +180,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         document.getElementById("guessAlert").innerHTML="You lose!! Restarting game...";
        
        /* playGame(wins); */
-        setTimeout(playAgain, 3000, wins);
+        setTimeout(playAgain, 1000, wins);
         
     }
     
