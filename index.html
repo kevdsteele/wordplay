@@ -163,7 +163,8 @@ if (guessedLetters.indexOf(userGuess) === -1){
             document.getElementById("winsText").innerHTML="You have won " + wins + " times";
             console.log("You win");
             updateWord(userSolution);
-            
+            for (z=0; z < 500; z++){};
+                
             playAgain(wins); 
         }
     } 
