@@ -153,6 +153,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
             wins++;
             document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
             console.log("You win");
+            updateWord(userSolution);
             sleep(2000);
             playGame(wins);
         }
