@@ -40,8 +40,10 @@ function sleep(miliseconds) {
 }
 
 
-    
-    
+function playAgain(wins) {
+    sleep (1000);
+    playGame(wins);
+}  
     
 
 /* Main game function */    
@@ -162,7 +164,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
             console.log("You win");
             updateWord(userSolution);
             
-            /* playGame(wins); */
+            playAgain(wins); 
         }
     } 
     else {
