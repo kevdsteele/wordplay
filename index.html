@@ -54,6 +54,7 @@ var guessCount = 10;
 var guessedLetters = [];
 var leftToGuess=0;  
 var correctGuess = false;
+var wordString1 = "";
 
  /* Function to pick random word from array */
 function randWord () {
@@ -127,6 +128,8 @@ if (guessedLetters.indexOf(userGuess) === -1){
      /*check to see if letter matches */    
     if (wordLetters[j] === userGuess) {  
         userSolution[j] = userGuess;
+        wordString[j] = userGuess;
+        console.log(wordString1);
         correctGuess = true;
         /*store the letter in an array with same index value*/
             
