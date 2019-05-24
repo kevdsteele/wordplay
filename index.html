@@ -51,10 +51,7 @@ function updateWord (userSolution) {
       return wordString;
 }   
     
-/* Function to pick random word from array */
-function randWord () {
-    return  wordList[Math.floor(Math.random() * wordList.length)];    
-}    
+    
     
 
 /* Main game function */    
@@ -67,7 +64,11 @@ var guessCount = 10;
 var guessedLetters = [];
 var leftToGuess=0;  
 var correctGuess = false;
-   
+
+ /* Function to pick random word from array */
+function randWord () {
+    return  wordList[Math.floor(Math.random() * wordList.length)];    
+}   
 
 /* Set/Reset game text to begnnning values */
    
