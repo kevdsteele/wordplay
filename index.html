@@ -28,17 +28,18 @@
 
 
 <script type="text/javascript">
-/*Declare variables*/
+/*Global variable to keep Win count after reset*/
 var wins = 0; 
 
     
+/*Function to allow a pause before game resets*/
 function sleep(miliseconds) {
    var currentTime = new Date().getTime();
-
-   while (currentTime + miliseconds >= new Date().getTime()) {
+        while (currentTime + miliseconds >= new Date().getTime()) {
    }
 }
 
+/*Function to pull partial correct guess from array into a string. Output from the array included the comma seperator */    
 function updateWord (userSolution) {
     var wordString = "";
     
@@ -48,9 +49,15 @@ function updateWord (userSolution) {
     document.getElementById("wordText").innerHTML=wordString;
        
       return wordString;
-}    
-
+}   
     
+/* Function to pick random word from array */
+function randWord () {
+    return  wordList[Math.floor(Math.random() * wordList.length)];    
+}    
+    
+
+/* Main game function */    
 function playGame (wins) {
 
 var wordList= ["sheldon", "leonard", "howard", "raj", "penny", "amy", "bernadette", "stewart", "bazinga", "comic book", "science", "comic con"];
@@ -62,7 +69,7 @@ var leftToGuess=0;
 var correctGuess = false;
    
 
-/* Set/Reset game to begnnning */
+/* Set/Reset game text to begnnning values */
    
 document.getElementById('guessesLeft').innerHTML="Guesses left: " + guessCount;
 document.getElementById("winsText").innerHTML="You have won " + wins + " times";
@@ -70,22 +77,12 @@ document.getElementById("wordText").innerHTML="";
 document.getElementById("guessAlert").innerHTML="Press any key to start";
 document.getElementById("guessText").innerHTML="";
 
-    
-    
-    
-/* var word = wordList[Math.floor(Math.random() * wordList.length)]; */
 
+/* call random word function */
 var word =randWord();
 
 
-/* Function to pick random word from array */
-function randWord () {
-
-   return  wordList[Math.floor(Math.random() * wordList.length)];    
-}
-
-
-/*Output underscores and spaces in word */
+/*Output underscores and spaces in word to web page */
    
 for (i = 0; i < word.length; i++) {
 wordLetters.push(word[i]);
@@ -106,7 +103,7 @@ console.log(wordLetters);
 document.onkeyup = function(event) {
     var userGuess = event.key;
     var solved = false;
-    var correctGuess = false;
+  
    
     
     console.log("This was the user guess " + userGuess);
@@ -148,7 +145,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         console.log("You found a letter");
         console.log(userSolution);
         } else {
-            
+            updateWord();
             document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
             wins++;
             document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
