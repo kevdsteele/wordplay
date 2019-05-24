@@ -8,22 +8,21 @@
 
 <body>
 
-<!--Boostrap grid-->
-        <div class="container">
-            <h2> Guess the Word</h2>
-            <hr>
-            <div id="wordText"></div>
-            <hr>
-            <div id="guessAlert">Press any key to start</div>
-            <hr>
-            <div>Guessed Letters</div>
-            <hr>
-            <div id="guessText"></div>
-            <hr>
-            <div id="guessesLeft"></div>
-            <hr>
-            <div id="winsText"></div>
-        </div>        
+<div class="container">
+    <h2> Guess the Word</h2>
+    <hr>
+    <div id="wordText"></div>
+    <hr>
+    <div id="guessAlert">Press any key to start</div>
+    <hr>
+    <div>Guessed Letters</div>
+    <hr>
+    <div id="guessText"></div>
+    <hr>
+    <div id="guessesLeft"></div>
+    <hr>
+    <div id="winsText"></div>
+</div>        
     
 
 
@@ -31,21 +30,12 @@
 /*Global variable to keep Win count after reset*/
 var wins = 0; 
 
-    
-/*Function to allow a pause before game resets*/
-function sleep(miliseconds) {
-   var currentTime = new Date().getTime();
-        while (currentTime + miliseconds >= new Date().getTime()) {
-   }
-}
-
-
+/*Function to delineate first play versus subsequent play*/
 function playAgain(wins) {
     
     playGame(wins);
 }  
     
-
 /* Main game function */    
 function playGame (wins) {
 
@@ -82,10 +72,9 @@ function updateWord (userSolution) {
     for (k=0; k < userSolution.length; k++) {
         wordString+= (userSolution[k] + "&nbsp");
         }
-    document.getElementById("wordText").innerHTML=wordString;
-       
-      return wordString;
-    console.log("This is the string from the function" + wordString);
+        document.getElementById("wordText").innerHTML=wordString;
+        return wordString;
+        console.log("This is the string from the function" + wordString);
 }       
 
 
@@ -115,7 +104,7 @@ document.onkeyup = function(event) {
     
     console.log("This was the user guess " + userGuess);
 
-   /* store user guess and determine if already guessed */
+/* store user guess and determine if already guessed */
 
 /* if indexOf is -1 the word is not in the guessed letters array*/
 
@@ -134,13 +123,12 @@ if (guessedLetters.indexOf(userGuess) === -1){
         updateWord (userSolution);
        
         correctGuess = true;
-        /*store the letter in an array with same index value*/
             
     }
    
   }     
 
-    /* output array as string so we can caompare - outputting array includes commas which made it difficult to compare*/
+    /* output array as string so we can compare - outputting array includes commas which made it difficult to compare*/
     /*initialize the word each pass so it includes recent guesses*/
 
     
@@ -156,15 +144,11 @@ if (guessedLetters.indexOf(userGuess) === -1){
         } else {
             console.log(userSolution);
             console.log(wordString);
-          
-              
             document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
             wins++;
             document.getElementById("winsText").innerHTML="You have won " + wins + " times";
             console.log("You win");
-            updateWord(userSolution);
-            
-                
+            /*pause briefly before restarting*/
             setTimeout(playAgain, 1000, wins);
         }
     } 
@@ -189,14 +173,6 @@ if (guessedLetters.indexOf(userGuess) === -1){
 }
 
 
-   
-
-
-
-      
-        
-        
-      
 }    
         
 return wins;       
