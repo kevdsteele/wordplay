@@ -163,7 +163,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
             console.log("You win");
             updateWord(userSolution);
             sleep(5000);
-            playGame(wins);
+            /* playGame(wins); */
         }
     } 
     else {
@@ -177,7 +177,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
     if (guessCount === 0) {
         document.getElementById("guessAlert").innerHTML="You lose!! Restarting game...";
         sleep (3000);
-        playGame(wins);
+       /* playGame(wins); */
         
     }
     
