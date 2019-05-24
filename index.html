@@ -144,7 +144,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         document.getElementById("guessAlert").innerHTML="You guessed a letter!";
         if (userSolution.indexOf("_") !== -1) {
             document.getElementById("guessAlert").innerHTML+= "&nbsp" + "Guess Again";
-        
+            correctGuess=false;
         console.log("You found a letter");
         console.log(userSolution);
         } else {
