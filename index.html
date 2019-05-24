@@ -39,17 +39,7 @@ function sleep(miliseconds) {
    }
 }
 
-/*Function to pull partial correct guess from array into a string. Output from the array included the comma seperator */    
-function updateWord (userSolution) {
-    var wordString = "";
-    
-    for (k=0; k < userSolution.length; k++) {
-        wordString+= (userSolution[k] + "&nbsp");
-        }
-    document.getElementById("wordText").innerHTML=wordString;
-       
-      return wordString;
-}   
+
     
     
     
@@ -81,6 +71,18 @@ document.getElementById("guessText").innerHTML="";
 
 /* call random word function */
 var word =randWord();
+    
+/*Function to pull partial correct guess from array into a string. Output from the array included the comma seperator */    
+function updateWord (userSolution) {
+    var wordString = "";
+    
+    for (k=0; k < userSolution.length; k++) {
+        wordString+= (userSolution[k] + "&nbsp");
+        }
+    document.getElementById("wordText").innerHTML=wordString;
+       
+      return wordString;
+}       
 
 
 /*Output underscores and spaces in word to web page */
