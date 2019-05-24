@@ -153,6 +153,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
         } else {
             console.log(userSolution);
             console.log(wordString);
+            var wordString = updateWord (userSolution); 
             document.getElementById("wordText").innter.HTML=wordString;
             document.getElementById("guessAlert").innerHTML="You won! Restarting game...";
             wins++;
