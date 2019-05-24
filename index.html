@@ -107,7 +107,7 @@ console.log(wordLetters);
 document.onkeyup = function(event) {
     var userGuess = event.key;
     var solved = false;
-  
+    var wordString=updateWord(userSolution);
    
     
     console.log("This was the user guess " + userGuess);
