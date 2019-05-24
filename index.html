@@ -163,13 +163,9 @@ if (guessedLetters.indexOf(userGuess) === -1){
             document.getElementById("winsText").innerHTML="You have won " + wins + " times";
             console.log("You win");
             updateWord(userSolution);
-            var rotator = function(){
-                widget.Rotator.rotate();
-                setTimeout(rotator,5000);
-                };
-            rotator();
+            
                 
-            playAgain(wins); 
+            setTimeout (playAgain(wins), 3000);
         }
     } 
     else {
