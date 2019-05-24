@@ -39,15 +39,15 @@ function sleep(miliseconds) {
    }
 }
 
-function correctUpdate (userSolution) {
+function updateWord (userSolution) {
     var wordString = "";
     
     for (k=0; k < userSolution.length; k++) {
         wordString+= (userSolution[k] + "&nbsp");
         }
     document.getElementById("wordText").innerHTML=wordString;
-        correctGuess= true;
-      return correctGuess ;
+       
+      return wordString;
 }    
 
     
@@ -58,7 +58,8 @@ var wordLetters = [];
 var userSolution = [];
 var guessCount = 10;
 var guessedLetters = [];
-var leftToGuess=0;    
+var leftToGuess=0;  
+var correctGuess = false;
    
 
 /* Set/Reset game to begnnning */
@@ -126,7 +127,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
      /*check to see if letter matches */    
     if (wordLetters[j] === userGuess) {  
         userSolution[j] = userGuess;
-        
+        correctGuess = true;
         /*store the letter in an array with same index value*/
             
     }
@@ -137,7 +138,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
     /*initialize the word each pass so it includes recent guesses*/
 
     
-    var correctGuess = correctUpdate (userSolution);         
+    var wordString = updateWord (userSolution);         
 
     if (correctGuess) {
         document.getElementById("guessAlert").innerHTML="You guessed a letter!";
