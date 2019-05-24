@@ -128,8 +128,8 @@ if (guessedLetters.indexOf(userGuess) === -1){
      /*check to see if letter matches */    
     if (wordLetters[j] === userGuess) {  
         userSolution[j] = userGuess;
-        wordString1[j] = userGuess;
-        console.log(wordString1);
+        updateWord (userSolution);
+       
         correctGuess = true;
         /*store the letter in an array with same index value*/
             
