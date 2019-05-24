@@ -162,7 +162,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
             document.getElementById("winsText").innerHTML="You have won " + wins + " times. Restarting game...";
             console.log("You win");
             updateWord(userSolution);
-            sleep(5000);
+            
             /* playGame(wins); */
         }
     } 
@@ -176,7 +176,7 @@ if (guessedLetters.indexOf(userGuess) === -1){
 
     if (guessCount === 0) {
         document.getElementById("guessAlert").innerHTML="You lose!! Restarting game...";
-        sleep (3000);
+       
        /* playGame(wins); */
         
     }
